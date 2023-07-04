@@ -2,43 +2,48 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\V1\BookResource;
 use App\Models\Book;
-use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
-        return BookResource::collection(Book::latest()->paginate());
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        //
     }
 
     /**
      * Display the specified resource.
-     *
-     * @param Book $book
-     * @return BookResource
      */
-    public function show(Book $book): BookResource
+    public function show(Book $book)
     {
-        return new BookResource($book);
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, Book $book)
+    {
+        //
     }
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @param Book $book
-     * @return JsonResponse
      */
-    public function destroy(Book $book): JsonResponse
+    public function destroy(Book $book)
     {
-        if ($book->delete()) {
-            return response()->json([
-                'message' => 'Success'
-            ], 204);
-        }
-        return response()->json([
-            'message' => 'Not found'
-        ], 404);
+        //
     }
 }
